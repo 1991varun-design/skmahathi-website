@@ -1,0 +1,56 @@
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fefcf8;
+    color: #3c2a1e;
+}
+
+header {
+    background-color: #5e0b15;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #ffd700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: #f6e6d7;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #5e0b15;
+    color: white;
+    margin-top: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 400px;
+    margin: auto;
+}
