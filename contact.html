@@ -1,30 +1,432 @@
-
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK Mahathi</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header>
-    <nav>
-        <h1 class="logo">SK Mahathi</h1>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="music.html">Music & Videos</a></li>
-            <li><a href="concerts.html">Concerts</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — SK Mahathi</title>
+  <meta name="description" content="Carnatic vocalist, performer and teacher."/>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <meta property="og:title" content="Contact — SK Mahathi"/>
+  <meta property="og:description" content="Carnatic vocalist, performer and teacher."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://example.com"/>
+  <meta property="og:image" content="assets/images/logo.svg"/>
+</head><body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img class="logo" src="assets/images/logo.png" alt="SK Mahathi logo"/>
+    </a>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="music.html">Music</a>
+      <a href="concerts.html">Concerts</a>
+      <a href="contact.html">Contact</a>
+      <a class="cta active" href="enroll.html">Enroll</a>
     </nav>
+  </div>
 </header>
 <main>
-<section><h2>Contact</h2><form><input type='text' placeholder='Your Name'><input type='email' placeholder='Your Email'><textarea placeholder='Message'></textarea><button type='submit'>Send</button></form></section>
+<section class="contact-form">
+  <div class="form-container">
+    <h2>🎶 Concert Booking Enquiry</h2>
+    <p class="form-intro">Please fill out the form below to book or enquire about a concert. We will get back to you promptly.</p>
+    
+    <form id="concertForm" action="https://formspree.io/f/xdklpdqq" method="POST">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Your Name*</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email*</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number*</label>
+          <input type="tel" id="phone" name="phone" required
+            pattern="^[0-9]{10,15}$" inputmode="numeric"
+            title="Please enter digits only (10–15 digits)">
+        </div>
+
+        <div class="form-group">
+          <label for="Organization">Organization*</label>
+          <input type="text" id="Organization" name="Organization" required>
+        </div>
+
+        <div class="form-group">
+          <label for="venue">City/Venue Name*</label>
+          <input type="text" id="venue" name="venue" required>
+        </div>
+
+        <div class="form-group">
+          <label for="state">State*</label>
+          <select id="state" name="state" required>
+            <option value="">-- Select State --</option>
+            <option value="Outside India">Outside India</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <!-- ... other states ... -->
+          </select>
+        </div>
+
+        <div class="form-group" id="countryWrapper" style="display:none;">
+          <label for="country">Country*</label>
+          <input type="text" id="country" name="country">
+        </div>
+
+        <div class="form-group">
+          <label for="date">Proposed Date*</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="concert_type">Concert Type*</label>
+          <select id="concert_type" name="concert_type" required>
+            <option value="" disabled selected hidden>-- Select Concert Type --</option>
+            <option value="Full Concert">Full Concert</option>
+            <option value="Lecture Demonstration">Lecture Demonstration</option>
+            <option value="Thematic">Thematic</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Devotional">Devotional</option>
+            <option value="Corporate">Corporate</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="duration">Approx. Duration*</label>
+          <select id="duration" name="duration" required>
+            <option value="" disabled selected hidden>-- Select Duration --</option>
+            <option value="1 hr">1 hr</option>
+            <option value="1.5 hr">1.5 hr</option>
+            <option value="2 hr">2 hr</option>
+            <option value="Custom">Custom</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="message">Additional Details*</label>
+          <textarea id="message" name="message" rows="4" required
+            placeholder="Please enter the additional details and other proposed dates here"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn primary full-width">Submit Enquiry</button>
+    </form>
+  </div>
+</section>
+
+
+<script>
+/* ----- Config ----- */
+const appsScriptURL = "https://script.google.com/macros/s/AKfycbz-rPRjLFzetFLMML-yCOJqv8-fVpwuqCw0KY1Orf0PwmoKJDypKqopmCx4EGLAcI_7bw/exec";
+const form = document.getElementById("concertForm");
+const submitBtn = form.querySelector('button[type="submit"]');
+const stateSelect = document.getElementById("state");
+const countryWrapper = document.getElementById("countryWrapper");
+const countryInput = document.getElementById("country");
+
+/* ----- Helpers ----- */
+function setError(field, message) {
+  field.classList.add("error");
+  let err = field.nextElementSibling;
+  if (!err || !err.classList.contains("error-message")) {
+    err = document.createElement("div");
+    err.className = "error-message";
+    field.insertAdjacentElement("afterend", err);
+  }
+  err.innerText = message;
+  err.style.display = "block";
+}
+
+function clearAllErrors() {
+  form.querySelectorAll(".error-message").forEach(el => el.style.display = "none");
+  form.querySelectorAll(".error").forEach(f => f.classList.remove("error"));
+}
+
+function showFormMessage(type, text) {
+  // type: "success" or "error"
+  let existing = document.querySelector(".submission-message");
+  if (existing) existing.remove();
+  const div = document.createElement("div");
+  div.className = "submission-message " + type;
+  div.innerText = text;
+  form.insertAdjacentElement("beforebegin", div);
+  // auto-hide success after 6s
+  if (type === "success") setTimeout(()=> div.remove(), 6000);
+}
+
+/* ----- Validation functions ----- */
+function validateName(name) {
+  // Allowed: letters, dot, spaces. Minimum 3 alphabetic letters.
+  if (!name) return false;
+  if (!/^[A-Za-z.\s]+$/.test(name)) return false;
+  const alphaCount = (name.match(/[A-Za-z]/g) || []).length;
+  return alphaCount >= 3;
+}
+
+function validateEmail(email) {
+  // simple but reliable check
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validatePhone(phone) {
+  return /^[0-9]{10,15}$/.test(phone);
+}
+
+function validateFutureDate(dateValue) {
+  if (!dateValue) return false;
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const sel = new Date(dateValue);
+  return sel > today; // strictly future
+}
+
+/* ----- Show/hide country logic (as before) ----- */
+stateSelect.addEventListener("change", function () {
+  if (this.value === "Outside India") {
+    countryWrapper.style.display = "block";
+    countryInput.setAttribute("required", "required");
+  } else {
+    countryWrapper.style.display = "none";
+    countryInput.removeAttribute("required");
+    countryInput.value = "";
+    // clear country error if any
+    const err = countryInput.nextElementSibling;
+    if (err && err.classList.contains('error-message')) err.style.display = 'none';
+    countryInput.classList.remove('error');
+  }
+});
+
+/* ----- MAIN submit handler ----- */
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  clearAllErrors();
+  showFormMessage("",""); // remove previous
+
+  // Basic field references
+  const nameField = form.querySelector('#name');
+  const emailField = form.querySelector('#email');
+  const phoneField = form.querySelector('#phone');
+  const orgField = form.querySelector('#Organization');
+  const venueField = form.querySelector('#venue');
+  const stateField = form.querySelector('#state');
+  const dateField = form.querySelector('#date');
+  const typeField = form.querySelector('#concert_type');
+  const durationField = form.querySelector('#duration');
+  const messageField = form.querySelector('#message');
+
+  let hasError = false;
+
+  // Name
+  const nameVal = nameField.value.trim();
+  if (!validateName(nameVal)) {
+    setError(nameField, "Name: only letters, space, & '.' allowed.At least 3 letters should be there.");
+    hasError = true;
+  }
+
+  // Email
+  const emailVal = emailField.value.trim();
+  if (!validateEmail(emailVal)) {
+    setError(emailField, "Please enter a valid email address.");
+    hasError = true;
+  }
+
+  // Phone
+  const phoneVal = phoneField.value.trim();
+  if (!validatePhone(phoneVal)) {
+    setError(phoneField, "Phone must be digits only (10–15 digits).");
+    hasError = true;
+  }
+
+  // Organization (required)
+  if (!orgField.value.trim()) {
+    setError(orgField, "Organization is required.");
+    hasError = true;
+  }
+
+  // Venue (required)
+  if (!venueField.value.trim()) {
+    setError(venueField, "City / Venue is required.");
+    hasError = true;
+  }
+
+  // State required
+  if (!stateField.value.trim()) {
+    setError(stateField, "Please select state.");
+    hasError = true;
+  }
+
+  // Country if visible
+  if (countryWrapper.style.display === "block" && !countryInput.value.trim()) {
+    setError(countryInput, "Country is required when 'Outside India' is selected.");
+    hasError = true;
+  }
+
+  // Proposed date - required + future only
+  if (!dateField.value.trim()) {
+    setError(dateField, "Please enter proposed date.");
+    hasError = true;
+  } else if (!validateFutureDate(dateField.value.trim())) {
+    setError(dateField, "Please choose a future date (after today).");
+    hasError = true;
+  }
+
+  // Concert type & duration
+  if (!typeField.value.trim()) {
+    setError(typeField, "Please choose concert type.");
+    hasError = true;
+  }
+  if (!durationField.value.trim()) {
+    setError(durationField, "Please choose approximate duration.");
+    hasError = true;
+  }
+
+  // Message (required)
+  if (!messageField.value.trim()) {
+    setError(messageField, "Please enter additional details and any other proposed dates.");
+    hasError = true;
+  }
+
+  if (hasError) {
+    // scroll to first error
+    const firstErr = form.querySelector(".error");
+    if (firstErr) firstErr.scrollIntoView({behavior:"smooth", block:"center"});
+    return;
+  }
+
+  // disable submit to avoid double submits
+  submitBtn.disabled = true;
+
+  // prepare FormData and trimmed values
+  const formData = new FormData(form);
+  // ensure trimmed values are used:
+  formData.set("name", nameVal);
+  formData.set("email", emailVal);
+  formData.set("phone", phoneVal);
+  formData.set("Organization", orgField.value.trim());
+  formData.set("venue", venueField.value.trim());
+  formData.set("state", stateField.value.trim());
+  formData.set("country", countryInput.value.trim());
+  formData.set("date", dateField.value.trim());
+  formData.set("concert_type", typeField.value.trim());
+  formData.set("duration", durationField.value.trim());
+  formData.set("message", messageField.value.trim());
+
+  try {
+    // 1) Submit to Formspree (email) and check response
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (!response.ok) {
+      // try parse JSON error message
+      let errText = "Error submitting form. Please try again later.";
+      try {
+        const json = await response.json();
+        if (json && json.error) errText = json.error;
+        if (json && json.message) errText = json.message;
+      } catch (_) {}
+      showFormMessage("error", errText);
+      submitBtn.disabled = false;
+      return;
+    }
+
+    // 2) Submit to Apps Script (Google Sheet)
+    const appsBody = new URLSearchParams({
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      Organization: formData.get("Organization"),
+      venue: formData.get("venue"),
+      state: formData.get("state"),
+      country: formData.get("country"),
+      date: formData.get("date"),
+      concert_type: formData.get("concert_type"),
+      duration: formData.get("duration"),
+      message: formData.get("message")
+    });
+
+    // don't rely on response from Apps Script (no-cors sometimes), but await it
+    await fetch(appsScriptURL, { method: "POST", body: appsBody });
+
+    // success
+    showFormMessage("success", "✅ Thank you — your enquiry has been submitted. We will contact you soon.");
+    form.reset();
+    countryWrapper.style.display = "none";
+
+  } catch (err) {
+    console.error(err);
+    showFormMessage("error", "Submission failed — please try again or email skmahathi@gmail.com");
+  } finally {
+    submitBtn.disabled = false;
+  }
+});
+</script>
+
+<section class="container page">
+  <h1>Contact</h1>
+  <p>For bookings or collaborations, mail at <a href="mailto:skmahathi.artist@gmail.com">skmahathi.artist@gmail.com</a>.</p>
+</section>
+
+
+
 </main>
-<footer>
-    <p>&copy; 2025 SK Mahathi. All Rights Reserved.</p>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>SK Mahathi</strong>
+      <p>Carnatic Vocalist • Performer • Teacher</p>
+    </div>
+    <div>
+      <p style="margin-left: 55px;">Connect</p>
+<div class="socials">
+  <!-- YouTube -->
+   <a aria-label="YouTube" href="https://www.youtube.com/@skMahathi" target="_blank" rel="noopener">
+    <div class="social-btn youtube">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 576 512" fill="white">
+        <path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.5-48.5C458.8 64 288 64 288 64S117.2 64 74.8 75.6c-23.7 6.3-42.3 24.8-48.5 48.5C16 166.5 16 256 16 256s0 89.5 10.3 131.9c6.3 23.7 24.8 42.3 48.5 48.5C117.2 448 288 448 288 448s170.8 0 213.2-11.6c23.7-6.3 42.3-24.8 48.5-48.5C560 345.5 560 256 560 256s0-89.5-10.3-131.9zM232 336V176l142 80-142 80z"/>
+      </svg>
+    </div>
+  </a>
+
+  <!-- Instagram -->
+  <a aria-label="Instagram" href="https://www.instagram.com/skmahathi/" target="_blank" rel="noopener">
+    <div class="social-btn instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 448 512" fill="white">
+        <path d="M224 202.7A53.3 53.3 0 1 0 277.3 256 53.38 53.38 0 0 0 224 202.7zm124.7-41a54 54 0 0 0-30.3-30.3c-20.9-8.4-70.6-6.5-94.4-6.5s-73.5-1.9-94.4 6.5a54 54 0 0 0-30.3 30.3c-8.4 20.9-6.5 70.6-6.5 94.4s-1.9 73.5 6.5 94.4a54 54 0 0 0 30.3 30.3c20.9 8.4 70.6 6.5 94.4 6.5s73.5 1.9 94.4-6.5a54 54 0 0 0 30.3-30.3c8.4-20.9 6.5-70.6 6.5-94.4s1.9-73.5-6.5-94.4zM398.8 80a93.8 93.8 0 0 1 53.2 53.2c8.5 21.5 10.7 45.4 10.7 134.8s-2.2 113.3-10.7 134.8a93.8 93.8 0 0 1-53.2 53.2c-21.5 8.5-45.4 10.7-134.8 10.7s-113.3-2.2-134.8-10.7a93.8 93.8 0 0 1-53.2-53.2C67.8 381.3 65.6 357.4 65.6 268s2.2-113.3 10.7-134.8A93.8 93.8 0 0 1 129.5 80c21.5-8.5 45.4-10.7 134.8-10.7s113.3 2.2 134.8 10.7z"/>
+      </svg>
+    </div>
+  </a>
+
+  <!-- Facebook -->
+  <a aria-label="Facebook" href="https://www.facebook.com/skmahathi6" target="_blank" rel="noopener">
+    <div class="social-btn facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 320 512" fill="white">
+        <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h36.58V6.26S293.34 0 262.16 0c-73.52 0-121.51 44.38-121.51 124.72v70.62H86.41V288h54.24v224h104.84V288z"/>
+      </svg>
+    </div>
+  </a>
+</div>
+    </div>
+  </div>
+  <div class="container tiny">
+    <p>© 2025 SK Mahathi • All rights reserved.</p>
+  </div>
 </footer>
+<script src="js/main.js"></script>
 </body>
 </html>
