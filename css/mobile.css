@@ -1,0 +1,171 @@
+/* ✅ Mobile Fixes */
+@media (max-width: 768px) {
+
+  /* NAVIGATION MENU */
+/* NAVIGATION MENU */
+.site-header {
+  padding: 0.5rem 1rem;
+  border-bottom: none;
+}
+
+.site-header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  height: auto;
+  flex-wrap: wrap;   /* ✅ allow wrapping to second line */
+}
+
+.logo {
+  max-height: 40px;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;   /* ✅ allow menu links to wrap */
+  gap: 0.4rem;
+}
+
+.menu a {
+  color: white;
+  font-size: 0.85rem; /* slightly smaller to fit more links */
+  padding: 0.3rem 0.4rem;
+}
+
+.menu .cta {
+  background: white;
+  color: #b30000;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+
+
+/* HERO SECTION */
+.hero {
+  clip-path: none !important; /* Don't cut off bottom */
+  min-height: auto !important;
+  padding: 2rem 1rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .container {
+  margin-top: 0 !important;
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 1.8rem;
+}
+
+.tagline {
+  font-size: 1rem;
+}
+
+/* CTA BUTTON ROW */
+.cta-row {
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  align-items: center;   /* ✅ center align horizontally */
+  justify-content: center;
+}
+
+.cta-row .btn {
+  width: 80%;
+  max-width: 280px;      /* ✅ keeps them from becoming too wide */
+  text-align: center;
+   transition: transform 0.2s ease, box-shadow 0.2s ease; /* smooth effect */
+}
+
+.cta-row .btn:hover,
+.cta-row .btn:focus {
+  transform: scale(1.05);      /* subtle enlargement */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* soft shadow */
+}
+
+/* CARDS GRID */
+.highlights {
+  grid-template-columns: 1fr;
+  padding: 0 1rem;
+}
+
+/* ABOUT SECTION IMAGE FIX */
+.about-section {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-text {
+  max-width: 100%;
+  margin: 0;
+}
+
+.about-image {
+  position: static;
+  max-width: 80%;
+  margin: 1rem auto 0;
+}
+
+/* FOOTER */
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+/* ===== CONCERTS PAGE ===== */
+  .concerts-container {
+    text-align: left; /* Align table content left */
+    padding: 0 1rem;
+  }
+
+  .concerts-container h1,
+  .concerts-container p.intro {
+    text-align: center; /* Heading and intro remain centered */
+  }
+
+
+}
+/* MOBILE CONCERTS TABLE FIX */
+@media (max-width: 768px) {
+  .concerts-table,
+  .concerts-table tbody,
+  .concerts-table tr,
+  .concerts-table td {
+    display: block !important;    /* override flex */
+    width: 100% !important;       /* full width */
+    padding-left: 0 !important;   /* remove padding pushing content right */
+    text-align: left !important;  /* force left align */
+    margin-bottom: 0.5rem;
+  }
+
+  .concerts-table thead {
+    display: none !important;     /* hide desktop headers */
+  }
+
+  .concerts-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .concerts-table td:last-child {
+    margin-bottom: 1rem;
+  }
+}
+
+

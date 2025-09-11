@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SK Mahathi — Carnatic Musician</title>
+  <meta name="description" content="Carnatic vocalist, performer and teacher."/>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/mobile.css">
+  <meta property="og:title" content="SK Mahathi — Carnatic Musician"/>
+  <meta property="og:description" content="Carnatic vocalist, performer and teacher."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://example.com"/>
+  <meta property="og:image" content="assets/images/logo.svg"/>
+  <style>
+    /* Elegant Carnatic Mood Enhancements */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fffdf9;
+      color: #050000;
+    }
+    .hero {
+      background: url("assets/images/banner.jpg") center/cover no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      clip-path: inset(0 0 10% 0);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45); /* subtle dark overlay for text readability */
+    }
+    .hero .container {
+      position: relative;
+      margin-top: 250px;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero span {
+      font-family: 'Playfair Display', serif;
+      color: #fff; /* classical golden accent */
+    }
+    .tagline {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      color: #f59608;
+      
+    }
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .btn {
+      padding: 0.8rem 1.6rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .btn.primary {
+      background: #ffd700;
+      color: #000;
+    }
+    .btn.primary:hover {
+      background: #e6c200;
+    }
+    .btn.ghost {
+      border: 2px solid #ffd700;
+      color: #ffd700;
+    }
+    .btn.ghost:hover {
+      background: #ffd700;
+      color: #000;
+    }
+    .highlights {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #f0e6d2;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.5rem;
+    }
+    .card .link {
+      color: #b8860b;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .card .link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img class="logo" src="assets/images/logo.png" alt="SK Mahathi logo"/>
+    </a>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="music.html">Music</a>
+      <a href="concerts.html">Concerts</a>
+      <a href="contact.html">Contact</a>
+      <a class="cta active" href="enroll.html">Enroll</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <h1>Susarla Krishnaveni Mahathi</h1>
+    <p class="tagline">Carnatic Vocalist • Performer • Teacher</p>
+    <div class="cta-row">
+      <a class="btn ghost" href="music.html">Listen</a>
+      <a class="btn ghost" href="enroll.html">Enroll</a>
+      <a class="btn ghost" href="contact.html#book-concert">Book Concert</a>
+    </div>
+  </div>
+</section>
+
+<section class="highlights container">
+  <div class="card">
+    <h3>Latest Performance</h3>
+    <p>Watch a recent seminar presentation on "Music and Literature in carnatic music" in my YouTube channel.</p>
+    <a class="link" href="https://youtu.be/qwKU-uDctDc?si=zSeH6WW1Eih8HYAw" target="_blank" rel="noopener">Open YouTube →</a>
+  </div>
+  <div class="card">
+    <h3>Upcoming Concerts</h3>
+    <ul class="list">
+      <li>Sep 22, 2025 — Kottayam</li>
+      <li>Sep 25, 2025 — Calicut</li> 
+      <li>Sep 27, 2025 — Kannur</li>
+    </ul>
+    <a class="link" href="concerts.html">See all dates →</a>
+  </div>
+  <div class="card">
+    <h3>Book concert</h3>
+    <p>Reach out now to schedule a concert and bring live music to your venue.</p>
+    <a class="link" href="contact.html#enquiry">Register interest →</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>SK Mahathi</strong>
+      <p>Carnatic Vocalist • Performer • Teacher</p>
+    </div>
+    <div>
+<p style="margin-left: 55px;">Connect</p>
+<div class="socials">
+  <!-- YouTube -->
+  <a aria-label="YouTube" href="https://www.youtube.com/@skMahathi" target="_blank" rel="noopener">
+    <div class="social-btn youtube">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 576 512" fill="white">
+        <path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.5-48.5C458.8 64 288 64 288 64S117.2 64 74.8 75.6c-23.7 6.3-42.3 24.8-48.5 48.5C16 166.5 16 256 16 256s0 89.5 10.3 131.9c6.3 23.7 24.8 42.3 48.5 48.5C117.2 448 288 448 288 448s170.8 0 213.2-11.6c23.7-6.3 42.3-24.8 48.5-48.5C560 345.5 560 256 560 256s0-89.5-10.3-131.9zM232 336V176l142 80-142 80z"/>
+      </svg>
+    </div>
+  </a>
+
+  <!-- Instagram -->
+  <a aria-label="Instagram" href="https://www.instagram.com/skmahathi/" target="_blank" rel="noopener">
+    <div class="social-btn instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 448 512" fill="white">
+        <path d="M224 202.7A53.3 53.3 0 1 0 277.3 256 53.38 53.38 0 0 0 224 202.7zm124.7-41a54 54 0 0 0-30.3-30.3c-20.9-8.4-70.6-6.5-94.4-6.5s-73.5-1.9-94.4 6.5a54 54 0 0 0-30.3 30.3c-8.4 20.9-6.5 70.6-6.5 94.4s-1.9 73.5 6.5 94.4a54 54 0 0 0 30.3 30.3c20.9 8.4 70.6 6.5 94.4 6.5s73.5 1.9 94.4-6.5a54 54 0 0 0 30.3-30.3c8.4-20.9 6.5-70.6 6.5-94.4s1.9-73.5-6.5-94.4zM398.8 80a93.8 93.8 0 0 1 53.2 53.2c8.5 21.5 10.7 45.4 10.7 134.8s-2.2 113.3-10.7 134.8a93.8 93.8 0 0 1-53.2 53.2c-21.5 8.5-45.4 10.7-134.8 10.7s-113.3-2.2-134.8-10.7a93.8 93.8 0 0 1-53.2-53.2C67.8 381.3 65.6 357.4 65.6 268s2.2-113.3 10.7-134.8A93.8 93.8 0 0 1 129.5 80c21.5-8.5 45.4-10.7 134.8-10.7s113.3 2.2 134.8 10.7z"/>
+      </svg>
+    </div>
+  </a>
+
+  <!-- Facebook -->
+  <a aria-label="Facebook" href="https://www.facebook.com/skmahathi6" target="_blank" rel="noopener">
+    <div class="social-btn facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 320 512" fill="white">
+        <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h36.58V6.26S293.34 0 262.16 0c-73.52 0-121.51 44.38-121.51 124.72v70.62H86.41V288h54.24v224h104.84V288z"/>
+      </svg>
+    </div>
+  </a>
+</div>
+
+      <div class="socials">
+        <!-- socials remain unchanged -->
+      </div>
+    </div>
+  </div>
+  <div class="container tiny">
+    <p>© 2025 SK Mahathi • All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
