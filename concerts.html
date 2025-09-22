@@ -8,7 +8,6 @@
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/mobile.css">
 
   <style>
     /* Container Styling */
@@ -81,9 +80,12 @@
       opacity: 0.8;
     }
 
-    .concerts-table tbody tr:nth-child(even) {
-      background: #fafafa;
-    }
+    .concerts-table tbody tr:nth-child(5n+1) { background: #fef6f6; } /* Row 1,6,11... */
+    .concerts-table tbody tr:nth-child(5n+2) { background: #f6fef9; } /* Row 2,7,12... */
+    .concerts-table tbody tr:nth-child(5n+3) { background: #f6f9fe; } /* Row 3,8,13... */
+    .concerts-table tbody tr:nth-child(5n+4) { background: #fff8e6; } /* Row 4,9,14... */
+    .concerts-table tbody tr:nth-child(5n+5) { background: #f5f5ff; } /* Row 5,10,15... */
+
 
     .concerts-table tbody tr:hover {
       background: #f1f1f1;
@@ -159,31 +161,31 @@
         <tr>
           <td data-label="Date">22-09-2025</td>
           <td data-label="City">Thampalakkad - Kottayam</td>
-          <td data-label="Venue">-</td>
+          <td data-label="Venue">Sree Mahakali para - Navaratri Mandapam</td>
           <td data-label="Details">Navaratri Kutcheri</td>
         </tr>
         <tr>
           <td data-label="Date">25-09-2025</td>
-          <td data-label="City">Calicut</td>
+          <td data-label="City">Chalappuram,Calicut</td>
           <td data-label="Venue">Kesari Bhavan</td>
           <td data-label="Details">Navaratri Kutcheri</td>
         </tr>
         <tr>
           <td data-label="Date">27-09-2025</td>
           <td data-label="City">Kannur</td>
-          <td data-label="Venue">Parassini</td>
+          <td data-label="Venue">Parassini Chamber Music</td>
           <td data-label="Details">Chamber Concert</td>
         </tr>
         <tr>
           <td data-label="Date">29-09-2025</td>
-          <td data-label="City">Calicut</td>
+          <td data-label="City">Tali, Calicut</td>
           <td data-label="Venue">Vettakkorumakan Temple</td>
           <td data-label="Details">Navaratri Kutcheri</td>
         </tr>
         <tr>
           <td data-label="Date">02-10-2025</td>
           <td data-label="City">Thiruvangad</td>
-          <td data-label="Venue">-</td>
+          <td data-label="Venue">Sreerama swamy Temple</td>
           <td data-label="Details">Vijayadasami Concert</td>
         </tr>
       </tbody>
