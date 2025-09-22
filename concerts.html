@@ -8,123 +8,10 @@
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
-
-  <style>
-    /* Container Styling */
-    .concerts-container {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-      text-align: center;
-    }
-
-    .concerts-container h1 {
-      font-family: "Playfair Display", serif;
-      font-size: 2.3rem;
-      margin-bottom: 1rem;
-      color: #222;
-    }
-
-    .concerts-container p.intro {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 2rem;
-    }
-
-    /* Table Styling */
-    .concerts-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-      border-radius: 10px;
-      overflow: hidden;
-      font-size: 0.95rem;
-    }
-
-    .concerts-table th, 
-    .concerts-table td {
-      padding: 1rem;
-      text-align: left;
-    }
-
-    .concerts-table thead {
-      background: #f4f4f4;
-    }
-
-    .concerts-table th {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #333;
-      cursor: pointer;
-      user-select: none;
-      position: relative;
-    }
-
-    /* Sorting arrows */
-    .concerts-table th::after {
-      content: "⇅";
-      font-size: 0.7rem;
-      opacity: 0.4;
-      margin-left: 0.3rem;
-      position: absolute;
-    }
-
-    .concerts-table th.sorted-asc::after {
-      content: "↑";
-      opacity: 0.8;
-    }
-
-    .concerts-table th.sorted-desc::after {
-      content: "↓";
-      opacity: 0.8;
-    }
-
-    .concerts-table tbody tr:nth-child(5n+1) { background: #fef6f6; } /* Row 1,6,11... */
-    .concerts-table tbody tr:nth-child(5n+2) { background: #f6fef9; } /* Row 2,7,12... */
-    .concerts-table tbody tr:nth-child(5n+3) { background: #f6f9fe; } /* Row 3,8,13... */
-    .concerts-table tbody tr:nth-child(5n+4) { background: #fff8e6; } /* Row 4,9,14... */
-    .concerts-table tbody tr:nth-child(5n+5) { background: #f5f5ff; } /* Row 5,10,15... */
+  <link rel="stylesheet" href="css/mobile.css" />
 
 
-    .concerts-table tbody tr:hover {
-      background: #f1f1f1;
-    }
-
-    /* Responsive Table */
-    @media (max-width: 768px) {
-      .concerts-table, .concerts-table thead, .concerts-table tbody, .concerts-table th, .concerts-table td, .concerts-table tr {
-        display: block;
-        width: 100%;
-      }
-
-      .concerts-table thead {
-        display: none;
-      }
-
-      .concerts-table tr {
-        margin-bottom: 1rem;
-        border-bottom: 1px solid #ddd;
-        background: #fff;
-        padding: 1rem;
-        border-radius: 8px;
-      }
-
-      .concerts-table td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .concerts-table td::before {
-        content: attr(data-label);
-        font-weight: 600;
-        text-align: left;
-      }
-    }
-  </style>
+ 
 </head>
 <body>
 <header class="site-header">
@@ -148,6 +35,7 @@
     <h1>Upcoming Concerts</h1>
     <p class="intro">Join SK Mahathi for a series of soulful Carnatic concerts this season.</p>
 
+    
     <table class="concerts-table" id="concertTable">
       <thead>
         <tr>
@@ -159,34 +47,34 @@
       </thead>
       <tbody>
         <tr>
-          <td data-label="Date">22-09-2025</td>
-          <td data-label="City">Thampalakkad - Kottayam</td>
-          <td data-label="Venue">Sree Mahakali para - Navaratri Mandapam</td>
-          <td data-label="Details">Navaratri Kutcheri</td>
+          <td data-label="📅 Date">22-09-2025</td>
+          <td data-label="📍 City">Thampalakkad - Kottayam</td>
+          <td data-label="🏛 Venue">Sree Mahakali para </td>
+          <td data-label="🎶 Details">Navaratri Mandapam</td>
         </tr>
         <tr>
-          <td data-label="Date">25-09-2025</td>
-          <td data-label="City">Chalappuram,Calicut</td>
-          <td data-label="Venue">Kesari Bhavan</td>
-          <td data-label="Details">Navaratri Kutcheri</td>
+          <td data-label="📅 Date">25-09-2025</td>
+          <td data-label="📍 City">Chalappuram,Calicut</td>
+          <td data-label="🏛 Venue">Kesari Bhavan</td>
+          <td data-label="🎶 Details">Navaratri Kutcheri</td>
         </tr>
         <tr>
-          <td data-label="Date">27-09-2025</td>
-          <td data-label="City">Kannur</td>
-          <td data-label="Venue">Parassini Chamber Music</td>
-          <td data-label="Details">Chamber Concert</td>
+          <td data-label="📅 Date">27-09-2025</td>
+          <td data-label="📍 City">Kannur</td>
+          <td data-label="🏛 Venue">Parassini Chamber Music</td>
+          <td data-label="🎶 Details">Chamber Concert</td>
         </tr>
         <tr>
-          <td data-label="Date">29-09-2025</td>
-          <td data-label="City">Tali, Calicut</td>
-          <td data-label="Venue">Vettakkorumakan Temple</td>
-          <td data-label="Details">Navaratri Kutcheri</td>
+          <td data-label="📅 Date">29-09-2025</td>
+          <td data-label="📍 City">Tali, Calicut</td>
+          <td data-label="🏛 Venue">Vettakkorumakan Temple</td>
+          <td data-label="🎶 Details">Navaratri Kutcheri</td>
         </tr>
         <tr>
-          <td data-label="Date">02-10-2025</td>
-          <td data-label="City">Thiruvangad</td>
-          <td data-label="Venue">Sreerama swamy Temple</td>
-          <td data-label="Details">Vijayadasami Concert</td>
+          <td data-label="📅 Date">02-10-2025</td>
+          <td data-label="📍 City">Thiruvangad</td>
+          <td data-label="🏛 Venue">Sreerama swamy Temple</td>
+          <td data-label="🎶 Details">Vijayadasami Concert</td>
         </tr>
       </tbody>
     </table>
