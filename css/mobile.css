@@ -25,25 +25,37 @@
     flex-wrap: nowrap;       /* prevent wrapping */
     justify-content: space-between;  /* spread links evenly */
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.3rem;
   }
 
   .menu a {
     color: white;
     Font-size: 0.85rem;      /* slightly smaller text */
-    padding: 0.3rem 0.4rem;  /* smaller padding */
+    padding: 0.25rem 0.4rem;  /* smaller padding */
     white-space: nowrap;      /* prevent breaking into two lines */
   }
 
   .menu .cta {
     flex: 0 0 auto;  
-    text-align: center;
-    background: white;
-    color: #b30000;
-    padding: 0.25rem 0.5rem;
-    border-radius: 16px;
+    background:var(--gold); color:#3d2a16;
+    padding: 0.2rem 0.45rem;
+    border-radius: 14px;
     font-size: 0.8rem;
   }
+
+  /* Special case: very narrow screens (e.g., iPhone SE/mini) */
+@media (max-width: 380px) {
+  .menu {
+    flex-wrap: wrap;   /* allow wrapping if it’s too tight */
+    justify-content: center;
+  }
+  
+  .menu .cta {
+    width: 100%;       /* button takes full row */
+    text-align: center;
+    margin-top: 0.3rem;
+  }
+}
 
   /* --- HERO SECTION --- */
   .hero {
