@@ -38,6 +38,18 @@ body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-
 .highlights{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:2rem auto 3rem}
 .card{background:var(--card); border:1px solid #eee3dd; border-radius:14px; padding:1rem 1.1rem; box-shadow:0 4px 12px rgba(0,0,0,.04)}
 .card h3{margin:.2rem 0 .4rem; font-family:'Playfair Display', serif}
+/* Different background colors for the three homepage highlight cards */
+.highlights .card:nth-child(1) {
+  background: #fff7f5; /* light peach for Latest Performance */
+}
+
+.highlights .card:nth-child(2) {
+  background: #f5fff7; /* soft mint for Upcoming Concerts */
+}
+
+.highlights .card:nth-child(3) {
+  background: #f7f5ff; /* gentle lavender for Book Concert */
+}
 .list{padding-left:1.2rem; margin:.4rem 0}
 .list li{margin:.15rem 0}
 
