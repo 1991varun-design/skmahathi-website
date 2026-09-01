@@ -1,0 +1,518 @@
+/* =========================================================
+   SK MAHATHI — HOME PAGE
+   Elegant Ivory • Antique Gold • Deep Maroon
+   V4:
+   - Desktop hero text/buttons raised so they are visible
+     on initial page load.
+   - Mobile name/buttons placed ABOVE the banner, matching
+     the original Home-page arrangement.
+   - Redundant hero caption remains removed.
+   ========================================================= */
+
+.page-home {
+  --home-ivory: #fffaf0;
+  --home-maroon: #5a1010;
+  --home-maroon-dark: #3f0808;
+  --home-gold: #c89a3d;
+  --home-gold-light: #e7c77f;
+  --home-brown: #4b382d;
+  --home-peach: #fff0e4;
+  --home-green: #f1f3e5;
+  --home-lilac: #f2edf5;
+
+  background: var(--home-ivory);
+  color: var(--home-brown);
+}
+
+/* ---------- Header ---------- */
+
+.page-home .site-header {
+  background: linear-gradient(180deg, #681313, var(--home-maroon));
+  border-bottom: 3px solid var(--home-gold);
+  box-shadow: 0 5px 18px rgba(50, 5, 5, .18);
+}
+
+.page-home .menu a.active:not(.cta) {
+  color: var(--home-gold-light);
+  position: relative;
+}
+
+.page-home .menu a.active:not(.cta)::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -0.65rem;
+  height: 2px;
+  background: var(--home-gold-light);
+}
+
+.page-home .menu .cta {
+  background: linear-gradient(180deg, #f0cf86, #d7ac52);
+  color: #3f0808;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, .16);
+}
+
+/* ---------- Hero / banner ---------- */
+
+.home-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #2f0909;
+  min-height: 0;
+  border-bottom: 1px solid rgba(200,154,61,.45);
+}
+
+.home-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.home-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(25, 3, 3, .78) 0%,
+      rgba(25, 3, 3, .50) 38%,
+      rgba(25, 3, 3, .16) 70%,
+      rgba(25, 3, 3, .10) 100%
+    );
+  pointer-events: none;
+}
+
+/* ---------- Desktop hero text ---------- */
+
+.home-hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  padding-top: clamp(4.5rem, 10vh, 6.5rem);
+  padding-bottom: 1rem;
+}
+
+/* Artist name is always white. */
+.page-home .artist-name {
+  max-width: 620px;
+  margin: 0;
+  color: #fff !important;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 1.04;
+  text-shadow: 0 3px 16px rgba(0,0,0,.48);
+}
+
+/* ---------- Decorative divider ---------- */
+
+.gold-divider {
+  width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  margin: .8rem 0 .2rem;
+  color: var(--home-gold-light);
+}
+
+.gold-divider span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--home-gold-light));
+}
+
+.gold-divider span:last-child {
+  background: linear-gradient(90deg, var(--home-gold-light), transparent);
+}
+
+.gold-divider b {
+  font-size: .55rem;
+  font-weight: 500;
+}
+
+/* ---------- Tagline ---------- */
+
+.page-home .tagline {
+  color: #fffaf0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  margin: .35rem 0 1.1rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,.45);
+}
+
+/* ---------- Original Home-page actions retained ---------- */
+
+.page-home .cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: flex-start;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-width: 145px;
+  padding: .75rem 1.1rem;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+}
+
+.home-btn:hover,
+.home-btn:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 20px rgba(0,0,0,.2);
+}
+
+.home-btn-primary {
+  background: var(--home-maroon);
+  color: #fff;
+  border: 1.5px solid var(--home-maroon);
+}
+
+.home-btn-primary:hover {
+  background: var(--home-maroon-dark);
+}
+
+.home-btn-gold {
+  background: linear-gradient(180deg, #efd080, #d6aa51);
+  color: #3f0808;
+  border: 1.5px solid #e0bb68;
+}
+
+.home-btn-gold:hover {
+  background: #f2d790;
+}
+
+.home-btn-outline {
+  background: rgba(255,250,240,.82);
+  color: var(--home-maroon);
+  border: 1.5px solid var(--home-gold);
+}
+
+.home-btn-outline:hover {
+  background: #fff;
+}
+
+/* ---------- Cards ---------- */
+
+.page-home .home-highlights {
+  position: relative;
+  z-index: 5;
+  margin-top: -38px;
+  padding-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.page-home .home-card {
+  position: relative;
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.7rem 1.35rem 1.45rem;
+  border: 1px solid rgba(200,154,61,.30);
+  border-radius: 18px;
+  box-shadow:
+    0 13px 28px rgba(61,8,8,.13),
+    0 2px 5px rgba(61,8,8,.06);
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+.page-home .home-card:hover {
+  transform: translateY(-9px);
+  border-color: rgba(200,154,61,.68);
+  box-shadow:
+    0 22px 42px rgba(61,8,8,.18),
+    0 5px 12px rgba(61,8,8,.08);
+}
+
+.home-card-performance {
+  background: linear-gradient(145deg, #fff7ef, var(--home-peach));
+}
+
+.home-card-concerts {
+  background: linear-gradient(145deg, #f8f8eb, var(--home-green));
+}
+
+.home-card-book {
+  background: linear-gradient(145deg, #faf5fa, var(--home-lilac));
+}
+
+.card-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin-bottom: .75rem;
+  border: 2px solid var(--home-gold);
+  border-radius: 50%;
+  background: rgba(255,255,255,.82);
+  color: var(--home-maroon);
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  box-shadow: inset 0 0 0 4px rgba(200,154,61,.08);
+}
+
+.home-card-concerts .card-icon {
+  color: #48642e;
+}
+
+.home-card-book .card-icon {
+  color: #5d477e;
+}
+
+.page-home .home-card h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  color: var(--home-maroon);
+  margin: .1rem 0;
+}
+
+.home-card-concerts h3 {
+  color: #39552b !important;
+}
+
+.home-card-book h3 {
+  color: #514078 !important;
+}
+
+.card-divider {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  margin: .25rem auto .75rem;
+  color: var(--home-gold);
+}
+
+.card-divider span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--home-gold));
+}
+
+.card-divider span:last-child {
+  background: linear-gradient(90deg, var(--home-gold), transparent);
+}
+
+.card-divider b {
+  font-size: .45rem;
+}
+
+.page-home .home-card p,
+.page-home .home-card li {
+  color: var(--home-brown);
+  font-size: .94rem;
+}
+
+.page-home .home-card .list {
+  width: 100%;
+  max-width: 280px;
+  text-align: left;
+  margin: .15rem auto .7rem;
+}
+
+.page-home .home-card .link {
+  margin-top: auto;
+  color: var(--home-maroon);
+}
+
+.home-card-concerts .link {
+  color: #39552b !important;
+}
+
+.home-card-book .link {
+  color: #514078 !important;
+}
+
+/* ---------- Footer ---------- */
+
+.page-home .site-footer {
+  margin-top: 0;
+  background: linear-gradient(180deg, #5b1010, #3d0808);
+  border-top: 3px solid var(--home-gold);
+}
+
+.page-home .footer-connect-title {
+  color: var(--home-gold-light);
+  margin-left: 55px;
+}
+
+/* =========================================================
+   MOBILE
+   Name + buttons ABOVE banner, like the original design.
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /*
+    Mobile follows the original Home-page composition:
+    the name and three buttons sit ON the banner image.
+    The name is anchored to the LEFT, while the existing button
+    alignment is retained as a horizontal row.
+  */
+  .home-hero {
+    position: relative;
+    display: block;
+    background: #3d0808;
+  }
+
+  .home-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-width: 100%;
+    max-height: none;
+    object-fit: contain;
+    object-position: center top;
+  }
+
+  .home-banner-overlay {
+    display: block;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(35, 5, 5, .04) 0%,
+        rgba(35, 5, 5, .12) 38%,
+        rgba(35, 5, 5, .58) 72%,
+        rgba(35, 5, 5, .82) 100%
+      );
+  }
+
+  .home-hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    min-height: 0;
+    padding: 1rem 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    text-align: left;
+  }
+
+  .page-home .artist-name {
+    max-width: 90%;
+    margin: 0;
+    font-size: clamp(1.8rem, 8vw, 2.55rem);
+    line-height: 1.05;
+    color: #fff !important;
+    text-align: left;
+    text-shadow: 0 2px 9px rgba(0, 0, 0, .55);
+  }
+
+  .gold-divider {
+    width: min(220px, 65%);
+    margin: .55rem 0 .15rem;
+  }
+
+  .page-home .tagline {
+    font-size: .98rem;
+    margin: .3rem 0 .85rem;
+    text-align: left;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+  }
+
+  /*
+    Buttons retain the existing three-button horizontal alignment.
+    They remain below the name/tagline without stretching vertically.
+  */
+  .page-home .cta-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .45rem;
+  }
+
+  .home-btn {
+    min-width: 0;
+    flex: 0 1 auto;
+    padding: .62rem .65rem;
+    font-size: .8rem;
+    white-space: nowrap;
+  }
+
+  .page-home .home-highlights {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+    padding-top: 1.15rem;
+    gap: 1rem;
+  }
+
+  .page-home .home-card {
+    min-height: 0;
+    padding: 1.4rem 1.2rem;
+  }
+
+  .page-home .home-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .page-home .footer-connect-title {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 380px) {
+
+  .home-hero-content {
+    padding-left: .75rem;
+    padding-right: .75rem;
+    padding-bottom: .9rem;
+  }
+
+  .page-home .artist-name {
+    font-size: 1.7rem;
+  }
+
+  .page-home .tagline {
+    font-size: .88rem;
+    margin-bottom: .65rem;
+  }
+
+  .page-home .cta-row {
+    gap: .3rem;
+  }
+
+  .home-btn {
+    font-size: .74rem;
+    padding: .56rem .38rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-btn,
+  .home-card {
+    transition: none;
+  }
+}

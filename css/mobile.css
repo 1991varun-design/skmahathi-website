@@ -1,7 +1,12 @@
-/* ===== MOBILE FIXES FOR SCREEN ≤ 768px ===== */
+/* =========================================================
+   SK MAHATHI — MOBILE STYLESHEET
+   Phase 1B: Maximum code clean-up.
+   Existing mobile behavior retained.
+   ========================================================= */
+
 @media (max-width: 768px) {
 
-  /* --- NAVIGATION MENU --- */
+  /* ---------- Header / navigation ---------- */
   .site-header {
     padding: 0.5rem 1rem;
     border-bottom: none;
@@ -13,7 +18,7 @@
     align-items: center;
     gap: 0.5rem;
     height: auto;
-    flex-wrap: wrap; /* allow wrapping to second line */
+    flex-wrap: wrap;
   }
 
   .logo {
@@ -22,42 +27,29 @@
 
   .menu {
     display: flex;
-    flex-wrap: nowrap;       /* prevent wrapping */
-    justify-content: space-between;  /* spread links evenly */
+    flex-wrap: nowrap;
+    justify-content: space-between;
     align-items: center;
     gap: 0.3rem;
   }
 
   .menu a {
-    color: white;
-    Font-size: 0.85rem;      /* slightly smaller text */
-    padding: 0.25rem 0.4rem;  /* smaller padding */
-    white-space: nowrap;      /* prevent breaking into two lines */
+    color: #fff;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.4rem;
+    white-space: nowrap;
   }
 
   .menu .cta {
-    flex: 0 0 auto;  
-    background:var(--gold); color:#3d2a16;
+    flex: 0 0 auto;
+    background: var(--gold);
+    color: #3d2a16;
     padding: 0.2rem 0.45rem;
     border-radius: 14px;
     font-size: 0.8rem;
   }
 
-  /* Special case: very narrow screens (e.g., iPhone SE/mini) */
-@media (max-width: 380px) {
-  .menu {
-    flex-wrap: wrap;   /* allow wrapping if it’s too tight */
-    justify-content: center;
-  }
-  
-  .menu .cta {
-    width: 100%;       /* button takes full row */
-    text-align: center;
-    margin-top: 0.3rem;
-  }
-}
-
-  /* --- HERO SECTION --- */
+  /* ---------- Hero ---------- */
   .hero {
     clip-path: none !important;
     min-height: auto !important;
@@ -86,7 +78,7 @@
     font-size: 1rem;
   }
 
-  /* --- CTA BUTTON ROW --- */
+  /* ---------- CTA buttons ---------- */
   .cta-row {
     flex-direction: column;
     gap: 0.6rem;
@@ -108,7 +100,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-  /* --- ABOUT SECTION --- */
+  /* ---------- About ---------- */
   .about-section {
     flex-direction: column;
     align-items: center;
@@ -124,9 +116,15 @@
     position: static;
     max-width: 80%;
     margin: 1rem auto 0;
+    left: auto;
+    top: auto;
   }
 
-  /* --- FOOTER --- */
+  .page-about .about-text {
+    text-align: justify;
+  }
+
+  /* ---------- Footer ---------- */
   .footer-grid {
     display: flex;
     flex-direction: column;
@@ -135,28 +133,25 @@
     text-align: center;
   }
 
-  /* ===== CONCERTS TABLE RESPONSIVE ===== */
+  /* ---------- Concert table as mobile cards ---------- */
   .concerts-table {
     width: 100%;
     border-collapse: collapse;
   }
 
-  /* Hide headers */
   .concerts-table thead {
     display: none;
   }
 
-  /* Each row becomes a card */
   .concerts-table tr {
     display: block;
     margin-bottom: 1rem;
     border-radius: 12px;
     background: #fff;
     padding: 1rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
 
-  /* Cells become flex rows with label */
   .concerts-table td {
     display: flex;
     justify-content: space-between;
@@ -179,10 +174,54 @@
     border-bottom: none;
   }
 
-  /* Alternating row colors */
-  .concerts-table tbody tr:nth-child(5n+1) { background: #fef6f6; }
-  .concerts-table tbody tr:nth-child(5n+2) { background: #f6fef9; }
-  .concerts-table tbody tr:nth-child(5n+3) { background: #f6f9fe; }
-  .concerts-table tbody tr:nth-child(5n+4) { background: #fff8e6; }
-  .concerts-table tbody tr:nth-child(5n+5) { background: #f5f5ff; }
+  .concerts-table tbody tr:nth-child(5n + 1) {
+    background: #fef6f6;
+  }
+
+  .concerts-table tbody tr:nth-child(5n + 2) {
+    background: #f6fef9;
+  }
+
+  .concerts-table tbody tr:nth-child(5n + 3) {
+    background: #f6f9fe;
+  }
+
+  .concerts-table tbody tr:nth-child(5n + 4) {
+    background: #fff8e6;
+  }
+
+  .concerts-table tbody tr:nth-child(5n + 5) {
+    background: #f5f5ff;
+  }
+
+  /* ---------- Videos ---------- */
+  .video {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .videofb {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  /* ---------- Forms / cards ---------- */
+  .highlights,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Very narrow screens — retained from the original site. */
+@media (max-width: 380px) {
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu .cta {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.3rem;
+  }
 }
