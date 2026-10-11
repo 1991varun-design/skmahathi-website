@@ -552,6 +552,83 @@ textarea.error {
   margin-bottom: 8px;
 }
 
+/* Click-to-play YouTube thumbnail: the real player loads only when tapped */
+.yt-facade {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--maroon-dark); /* shown if a thumbnail fails to load */
+  background-image: linear-gradient(135deg, var(--maroon-deep), var(--maroon-dark));
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.yt-facade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 5, 5, 0.18);
+  transition: background 0.2s ease;
+}
+
+.yt-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  border-radius: 50%;
+  background: rgba(90, 16, 16, 0.88);
+  border: 2px solid var(--gold-light);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.yt-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -11px 0 0 -7px;
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent var(--gold-light);
+}
+
+.yt-facade:hover::before,
+.yt-facade:focus-visible::before {
+  background: rgba(40, 5, 5, 0.04);
+}
+
+.yt-facade:hover .yt-play,
+.yt-facade:focus-visible .yt-play {
+  transform: scale(1.08);
+}
+
+.yt-facade:focus-visible {
+  outline: 3px solid var(--gold-antique);
+  outline-offset: 3px;
+}
+
+.latest-videos {
+  margin-top: 1.5rem;
+}
+
+.latest-heading {
+  text-align: center;
+  color: var(--maroon-deep);
+  font-size: 1.35rem;
+  margin: 1.8rem 0 0.4rem;
+}
+
 .videofb {
   flex: 1 1 45%;
   max-width: 300px;
