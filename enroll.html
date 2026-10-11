@@ -8,104 +8,26 @@
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/mobile.css">
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-    }
 
-    main.enroll-section {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #fafafa;
-      padding: 3rem 1rem;
-    }
-
-    .notify-card {
-      background: #fff;
-      max-width: 500px;
-      width: 100%;
-      padding: 2rem;
-      text-align: center;
-      border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    .notify-card h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #222;
-    }
-
-    .notify-card p {
-      color: #444;
-      font-size: 1rem;
-      margin: 0.5rem 0;
-    }
-
-    #notifyForm {
-      margin-top: 1.2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    #notifyForm input[type="email"] {
-      padding: 0.75rem 1rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      outline: none;
-      transition: border-color 0.3s ease;
-    }
-
-    #notifyForm input[type="email"]:focus {
-      border-color: #666;
-    }
-
-    #notifyForm button {
-      padding: 0.75rem;
-      font-size: 1rem;
-      font-weight: 600;
-      background: #222;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    #notifyForm button:hover {
-      background: #444;
-    }
-
-    .privacy-note {
-      font-size: 0.85rem;
-      color: #666;
-      margin-top: 0.8rem;
-    }
-  </style>
+  <meta property="og:title" content="Enroll — SK Mahathi" />
+  <meta property="og:description" content="Workshop and class enrollments — SK Mahathi" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.skmahathi.com/enroll.html" />
+  <meta property="og:image" content="https://www.skmahathi.com/assets/images/og-image.jpg" />
 </head>
-<body>
+<body class="page-enroll">
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="index.html">
+    <a class="brand" href="index.html" aria-label="SK Mahathi Home">
       <img class="logo" src="assets/images/logo.png" alt="SK Mahathi logo"/>
     </a>
-    <nav class="menu">
+    <nav class="menu" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="music.html">Music</a>
       <a href="concerts.html">Concerts</a>
       <a href="contact.html">Contact</a>
-      <a class="cta active" href="enroll.html">Enroll</a>
+      <a class="cta active" href="enroll.html" aria-current="page">Enroll</a>
     </nav>
   </div>
 </header>
@@ -132,7 +54,7 @@
       <p>Carnatic Vocalist • Performer • Teacher</p>
     </div>
     <div>
-      <p style="margin-left: 55px;">Connect</p>
+      <p class="footer-connect-title">Connect</p>
 <div class="socials">
   <!-- YouTube -->
    <a aria-label="YouTube" href="https://www.youtube.com/@skMahathi" target="_blank" rel="noopener">
@@ -168,42 +90,5 @@
   </div>
 </footer>
 <script src="js/main.js"></script>
-
-<script>
-document.getElementById("notifyForm").addEventListener("submit", async function (e) {
-  e.preventDefault();
-
-  const emailField = document.getElementById("email");
-  const email = emailField.value.trim();
-
-  // ✅ Stricter email validation
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  if (!emailRegex.test(email)) {
-    alert("⚠️ Please enter a valid email address before submitting.");
-    emailField.focus();
-    return;
-  }
-
-  const formData = new FormData(this);
-
-  try {
-    const response = await fetch(this.action, {
-      method: "POST",
-      body: new URLSearchParams(formData),
-      mode: "no-cors" // ✅ Needed for Google Forms
-    });
-
-    // ✅ Assume success if no network error
-    alert("✅ Thank you! You’ll be notified when enrollment opens.");
-    this.reset();
-  } catch (err) {
-    alert("❌ There was an error submitting your request. Please try again later.");
-    console.error("Notify form error:", err);
-  }
-});
-</script>
-
-
-
 </body>
 </html>

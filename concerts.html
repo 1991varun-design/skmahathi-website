@@ -18,8 +18,12 @@
   />
 
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/mobile.css" />
-  <link rel="stylesheet" href="css/concerts.css" />
+
+  <meta property="og:title" content="Concerts — SK Mahathi" />
+  <meta property="og:description" content="Upcoming and past concerts of SK Mahathi, Carnatic vocalist, performer and teacher." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.skmahathi.com/concerts.html" />
+  <meta property="og:image" content="https://www.skmahathi.com/assets/images/og-image.jpg" />
 </head>
 
 <body class="page-concerts">
@@ -39,7 +43,7 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="music.html">Music</a>
-        <a class="active" href="concerts.html">Concerts</a>
+        <a class="active" href="concerts.html" aria-current="page">Concerts</a>
         <a href="contact.html">Contact</a>
         <a class="cta" href="enroll.html">Enroll</a>
       </nav>
@@ -83,6 +87,12 @@
           <td data-label="🎶 Details">Music Concert</td>
         </tr>
         <tr>
+          <td data-label="📅 Date">19-10-2026</td>
+          <td data-label="📍 City">Thrissur</td>
+          <td data-label="🏛 Venue">Thiruvambady Temple</td>
+          <td data-label="🎶 Details">Navaratri Concert</td>
+        </tr>
+        <tr>
           <td data-label="📅 Date">18-10-2026</td>
           <td data-label="📍 City">Edappally,Kochi</td>
           <td data-label="🏛 Venue">Changampuzha Park</td>
@@ -119,41 +129,6 @@
 
   </main>
 
-  <script>
-  // Sorting Functionality
-  document.querySelectorAll("#concertTable th").forEach((header, index) => {
-    header.addEventListener("click", () => {
-      const table = header.closest("table");
-      const tbody = table.querySelector("tbody");
-      const rows = Array.from(tbody.querySelectorAll("tr"));
-      const isAsc = header.classList.contains("sorted-asc");
-
-      // Remove sort classes from all headers
-      table.querySelectorAll("th").forEach(th => th.classList.remove("sorted-asc", "sorted-desc"));
-
-      header.classList.toggle("sorted-asc", !isAsc);
-      header.classList.toggle("sorted-desc", isAsc);
-
-      rows.sort((a, b) => {
-        let cellA = a.children[index].innerText.trim();
-        let cellB = b.children[index].innerText.trim();
-
-        // Date handling
-        if (index === 0) {
-          const [dA, mA, yA] = cellA.split("-").map(Number);
-          const [dB, mB, yB] = cellB.split("-").map(Number);
-          return isAsc
-            ? new Date(yB, mB - 1, dB) - new Date(yA, mA - 1, dA)
-            : new Date(yA, mA - 1, dA) - new Date(yB, mB - 1, dB);
-        }
-
-        return isAsc ? cellB.localeCompare(cellA) : cellA.localeCompare(cellB);
-      });
-
-      rows.forEach(row => tbody.appendChild(row));
-    });
-  });
-</script>
 
   <footer class="site-footer">
 <div class="container footer-grid">
@@ -242,6 +217,8 @@
 
   
   </footer>
+
+  <script src="js/main.js"></script>
 
 </body>
 </html>
